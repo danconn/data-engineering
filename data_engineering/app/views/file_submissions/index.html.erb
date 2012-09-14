@@ -1,0 +1,15 @@
+<h1>File Submissions</h1>
+<p><%= link_to "New Submission", :action => "new" %></p>
+<% if @file_submissions.length > 0 %>
+<table>
+  <tr><th class="colleft">Name</th><th class="colright">Gross Revenue</th><tr>
+  <% @file_submissions.each do |submission| %>
+  <tr>
+    <td class="colleft"><%= submission.data_file_file_name %></td>
+    <td class="colright"><%= submission.gross_revenue %></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>Nothing has been submitted yet</p>
+<% end %>

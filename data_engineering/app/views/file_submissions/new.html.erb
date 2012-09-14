@@ -1,0 +1,12 @@
+<h1>Submit a File!</h1>
+<p><%= link_to "All Submissions", :action => "index" %></p>
+<%= form_for @file_submission do |f| %>
+  <ul>
+    <% @file_submission.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <%= f.label :data_file, "Data File" %>
+  <%= f.file_field :data_file %>
+  <%= f.submit "Upload" %>
+<% end %>
