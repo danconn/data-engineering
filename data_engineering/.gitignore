@@ -16,3 +16,5 @@
 
 # redcar temp files
 /.redcar
+
+/public/system/file_submissions/
