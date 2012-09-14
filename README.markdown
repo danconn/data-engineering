@@ -4,7 +4,8 @@ Terminal to where you want to clone my project solution on your local machine an
   
     git clone https://github.com/danconn/data-engineering.git
     
-From that directory, move down to data_engineering and assuming you have rake, rails and bundler run these commands:
+From that directory, move down to the data_engineering directoyr and assuming you have rake, rails and bundler 
+run these commands:
 
     bundle install
     sudo rake db:create # you might have to put in a password
@@ -13,8 +14,10 @@ From that directory, move down to data_engineering and assuming you have rake, r
     
 You can visit the app at localhost:3000 and upload the file to the form.
 
-I only created views for the new and index of the FileSubmission model so you can view the database data, etc. from
-with rails dbconsole from the project directory
+I only created views for the new and index of the FileSubmission model so you can view the database data, etc. from the
+project directory with
+    
+    rails dbconsole
 
 ## Note
 
