@@ -33,12 +33,12 @@ On MacOSX, if you have homebrew you can use:
 
     brew install imagemagick # maybe with sudo; I don't remember
 
-Then at the terminal, type in the command to find out where your installation is
+Then at the terminal, type in the following command to find out where your installation is:
 
     which convert
     
-to find out where your local install is. Then you need to got into my project and update and uncomment the line
+Then you need to got into my project and update and uncomment the line
 
     #Paperclip.options[:command_path] = "/usr/bin/"
     
-and replace /usr/bind/ with your value. Hopefully you don't have to deal with this.
+and replace /usr/bin/ with your value. Hopefully you don't have to deal with this.
