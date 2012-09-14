@@ -1,43 +1,41 @@
-# Challenge for Software Engineer - Big Data 
-To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
+# Project Setup Instructions
 
-There are three jobs that both use this challenge:
+Terminal to where you want to clone my project solution on your local machine and run the command:
+  
+    git clone https://github.com/danconn/data-engineering.git
+    
+From that directory, move down to data_engineering and assuming you have rake, rails and bundler run these commands:
 
-1. Senior Software Engineer: If you are applying to this position, the email address you should use for submission is [dev.challenges@livingsocial.com](dev.challenges@livingsocial.com).  You must use either Ruby/Ruby on Rails or Scala/Play2.0.
-1. Senior Software Engineer, Big Data (and/or Data Scientist): If you are applying to this position, the email address you should use for submission is [data.challenge@livingsocial.com](mailto:data.challenge@livingsocial.com).  You may use any programming language or framework you'd like.
+    bundle install
+    sudo rake db:create # you might have to put in a password
+    sudo rake db:migrate
+    rails server
+    
+You can visit the app at localhost:3000 and upload the file to the form.
 
-Feel free to email the appropriate address above if you have any questions.
+I only created views for the new and index of the FileSubmission model so you can view the database data, etc. from
+with rails dbconsole from the project directory
 
-## Submission Instructions
-1. First, fork this project on github.  You will need to create an account if you don't already have one.
-1. Next, complete the project as described below within your fork.
-1. Finally, push all of your changes to your fork on github and submit a pull request.  You should also email the appropriate address listed in the first section and your recruiter to let them know you have submitted a solution.  Make sure to include your github username in your email (so we can match people with pull requests).
+## Note
 
-## Alternate Submission Instructions (if you don't want to publicize completing the challenge)
-1. Clone the repository
-1. Next, complete your project as described below within your local repository
-1. Email a patch file to the appropriate address listed above ([data.challenge@livingsocial.com](mailto:data.challenge@livingsocial.com) if you are applying for the Big Data position, [dev.challenges@livingsocial.com](dev.challenges@livingsocial.com) if you are applying for the general Senior Software Engineer or Associate Developer position).
+The gem I am using for the upload, Paperclip, has a dependency on ImageMagick. I do not actually process an image 
+obviously, it is somewhat annoying to install ImageMagick and I did not get an error when I uninstalled it so I
+tried to just leave it out so the reviewer wouldn't have to deal with it.
 
-## Project Description
-Imagine that LivingSocial has just acquired a new company.  Unfortunately, the company has never stored their data in a database and instead uses a plain text file.  We need to create a way for the new subsidiary to import their data into a database.  Your task is to create a web interface that accepts file uploads, normalizes the data, and then stores it in a relational database.
+If you get an error relating to ImageMagick, on linux you can get it from apt-get:
 
-Here's what your web-based application must do:
+    sudo apt-get install imagemagick
+    
+On MacOSX, if you have homebrew you can use:
 
-1. Your app must accept (via a form) a tab delimited file with the following columns: purchaser name, item description, item price, purchase count, merchant address, and merchant name.  You can assume the columns will always be in that order, that there will always be data in each column, and that there will always be a header line.  An example input file named example_input.tab is included in this repo.
-1. Your app must parse the given file, normalize the data, and store the information in a relational database.
-1. After upload, your application should display the total amount gross revenue represented by the uploaded file.
+    brew install imagemagick # maybe with sudo; I don't remember
 
-Your application does not need to:
+Then at the terminal, type in the command to find out where your installation is
 
-1. handle authentication or authorization (bonus points if it does, extra bonus points if authentication is via OpenID)
-1. be written with any particular language or framework
-1. be aesthetically pleasing
+    which convert
+    
+to find out where your local install is. Then you need to got into my project and update and uncomment the line
 
-Your application should be easy to set up and should run on either Linux or Mac OS X.  It should not require any for-pay software.
-
-## Evaluation
-Evaluation of your submission will be based on the following criteria. Additionally, reviewers will attempt to assess your familiarity with standard libraries. If your code submission is in Ruby, reviewers will attempt to assess your experience with object-oriented programming based on how you've structured your submission.
-
-1. Did your application fulfill the basic requirements?
-1. Did you document the method for setting up and running your application?
-1. Did you follow the instructions for submission?
+    #Paperclip.options[:command_path] = "/usr/bin/"
+    
+and replace /usr/bind/ with your value. Hopefully you don't have to deal with this.
