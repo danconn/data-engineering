@@ -1,5 +1,8 @@
 # Project Setup Instructions
 
+I am using MySQL 5.5.24, Rails 3.2.8 and Ruby 1.9.3. One gem I am using, Paperclip, requires Ruby 1.9.2 or greater
+and Rails 3 or greater.
+
 Terminal to where you want to clone my project solution on your local machine and run the command:
   
     git clone https://github.com/danconn/data-engineering.git
