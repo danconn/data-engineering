@@ -1,5 +1,5 @@
 <h1>Submit a File!</h1>
-<p><%= link_to "All Submissions", :action => "index" %></p>
+<p><%= link_to "All Submissions", file_submissions_path %></p>
 <%= form_for @file_submission do |f| %>
   <ul>
     <% @file_submission.errors.full_messages.each do |msg| %>
