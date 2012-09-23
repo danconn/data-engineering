@@ -34,4 +34,9 @@ DataEngineering::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+  
+  # set location to fixtures folder so we can easily
+  # delete in teardown / after tests are run
+  config.paperclip_defaults = { :path => 
+    ":rails_root/test/fixtures/paperclip_files/:class/:attachment/:id_partition/:style/:filename" }
 end
