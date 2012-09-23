@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914033449) do
+ActiveRecord::Schema.define(:version => 20120922145451) do
 
   create_table "file_submissions", :force => true do |t|
-    t.string   "name"
     t.decimal  "gross_revenue",          :precision => 8, :scale => 2
     t.datetime "created_at",                                           :null => false
     t.datetime "updated_at",                                           :null => false
