@@ -54,17 +54,6 @@ class FileSubmissionsControllerTest < ActionController::TestCase
     # make sure flash message is nil
     assert_equal nil, 
       flash[:notice], "Success message was populated"
-  end
+  end  
   
-  private
-  
-  # this should probably be moved to a teardown
-  # but I couldn't find the rails testing equivalent
-  # of context from Shoulda
-  def remove_test_upload_file(file_submission)
-    if File.exists?(file_submission.data_file.path)
-      require 'fileutils'
-      FileUtils.rm_rf(File.join(Rails.root, 'test/fixtures/paperclip_files/file_submissions'))
-    end
-  end
 end

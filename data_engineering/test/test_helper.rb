@@ -3,11 +3,15 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
-
-  # Add more helper methods to be used by all tests here...
+  
+  # to be called after file test is run to
+  # get rid of the file so we don't get a futre
+  # false positive on a file that exists
+  def remove_test_upload_file(file_submission)
+    if File.exists?(file_submission.data_file.path)
+      require 'fileutils'
+      FileUtils.rm_rf(File.join(Rails.root, 'test/fixtures/paperclip_files/file_submissions'))
+    end
+  end
+  
 end
