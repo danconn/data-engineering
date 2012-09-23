@@ -3,9 +3,7 @@
 one:
   description: 
   price: 
-  belongs_to: 
 
 two:
   description: 
   price: 
-  belongs_to: 
