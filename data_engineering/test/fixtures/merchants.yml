@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: 
-  address: MyText
+merchant_1:
+  name: Bob's Pizza
+  address: 987 Fake St
 
-two:
-  name: 
-  address: MyText
+merchant_2:
+  name: Tom's Awesome Shop
+  address: 456 Unreal Rd
+
+merchant_3:
+  name: Sneaker Store Emporium
+  address: 123 Fake St

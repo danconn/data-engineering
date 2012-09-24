@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  gross_revenue: 
+full_file_submissions:
+  gross_revenue: 95.0
+  data_file_file_name: example_input.tab
+  data_file_content_type: application/octet-stream
+  data_file_file_size: 376
 
 two:
   gross_revenue: 

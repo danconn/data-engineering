@@ -1,7 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+purchaser_1:
+  name: Snake Plissken
 
-two:
-  name: MyString
+purchaser_2:
+  name: Amy Pond
+
+purchaser_3:
+  name: Marty McFly

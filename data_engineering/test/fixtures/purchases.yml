@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  count: 1
-  item: 
-  purchaser: 
+  count: 2
+  item: item_1
+  purchaser: purchaser_1
 
 two:
+  count: 5
+  item: item_2
+  purchaser: purchaser_2
+
+three:
   count: 1
-  item: 
-  purchaser: 
+  item: item_3
+  purchaser: purchaser_3
+
+four:
+  count: 4
+  item: item_3
+  purchaser: purchaser_1
