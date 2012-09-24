@@ -7,7 +7,7 @@ class FileSubmission < ActiveRecord::Base
   after_create do |record|
     # now use FileImporter class to do the dirty
     # work after the file has been uploaded/saved
-    DataEngineering::FileImporter.new(record.data_file.queued_for_write[:original].path, record).import!
+    DataEngineering::FileImporter.import!(record.data_file.queued_for_write[:original].path, record)
   end
   
 end
