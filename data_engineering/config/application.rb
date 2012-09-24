@@ -59,8 +59,7 @@ module DataEngineering
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    # load lib classes and observers so I won't have to
-    # require them
+    # load lib classes so I won't have to require them
     config.autoload_paths += %W( #{Rails.root}/lib )
   end
 end
